@@ -1,0 +1,10 @@
+ask_choice: "Please select your choice. Possible choices are:\n  Spock, lizard, rock, scissors, paper\nYou may also enter the first character (S, l, r, s, p) if you don't feel like typing."
+computer_wins: "Ah shucks. The computer won."
+error_choice: "Invalid entry. Please try again."
+explain_game: "This game is a variation of the classic children's game 'Rock Paper Scissors'.\nInstead of three objects, there are five: rock, paper, scissors, lizard, and Spock.\nThe player is asked for an object, then the computer randomly selects an object.\n\nThe rules are as follows:\n  Spock wins over scissors and rock\n  lizard wins over Spock and paper\n  rock wins over lizard and scissors\n  scissors wins over paper and lizard\n  paper wins over Spock and rock\nIf player and computer objects are the same, there is a tie.\n\nThe game is over when either the player or the computer achieves five wins."
+goodbye: "Hope you enjoyed playing the game! See you next time."
+greeting: "Hello!! Welcome to Rock Paper Scissors Big Bang Version"
+play_again: "Would you like to play another round against the computer?"
+player_wins: "You win!! Hot dog!!"
+tie: "There is a tie."
+
