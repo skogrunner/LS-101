@@ -83,10 +83,6 @@ def available_moves(board)
   board.select { |_, val| val == FREE_SQUARE }.keys
 end
 
-def clear_board(board)
-  board.each_key { |key| board[key] = FREE_SQUARE }
-end
-
 def clear_row_status(row_status)
   row_status.map! { 0 }
 end
@@ -184,6 +180,10 @@ def joinor(str_array, sep = ', ', cond = 'or')
   str_array[0..-2].join(sep) + sep + cond + ' ' + str_array[-1]
 end
 
+def new_board
+  %w[1 2 3 4 5 6 7 8 9].zip(Array.new(9, FREE_SQUARE)).to_h
+end
+
 def player_chooses_first?
   choice = nil
   loop do
@@ -228,7 +228,6 @@ end
 
 # main body of code starts here
 
-board = %w[1 2 3 4 5 6 7 8 9].zip([]).to_h
 # row_status checks the status of the eight scoring rows
 # (see constant SCORING_ROWS). Each time a player selects a square,
 # each row that the square is in will have +1 added to its row status.
@@ -242,6 +241,7 @@ board = %w[1 2 3 4 5 6 7 8 9].zip([]).to_h
 # A row status of +3 or -3 means that the player or the computer has
 # three in a row, and has won the game.
 row_status = Array.new(8)
+
 name = ask_player_name
 clear_screen
 introduction(name)
@@ -249,7 +249,7 @@ introduction(name)
 score = { player: 0, computer: 0, tie: 0 }
 
 loop do
-  clear_board(board)
+  board = new_board
   clear_row_status(row_status)
   player_turn = if FIRST_TURN == 'P'
                   true
